@@ -66,5 +66,16 @@ namespace EmployeeService.Controllers
             }
             return Ok(emp);
         }
+        [HttpPut]
+        public async Task<ActionResult> EditEmployee(int id, Employee emp)
+        {
+            var empl = await _services.UpdateUser(id,emp);
+            if(empl == null)
+            {
+                return BadRequest();
+            }
+            return Ok(empl);
+
+        }
     }
 }

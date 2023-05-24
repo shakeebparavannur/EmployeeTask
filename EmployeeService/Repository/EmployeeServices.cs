@@ -73,6 +73,11 @@ namespace EmployeeService.Repository
             {
                 return null;
             }
+            emp.Name = employee.Name;
+            emp.Salary = employee.Salary;
+            emp.Email = employee.Email;
+            emp.Phone = employee.Phone;
+            await context.SaveChangesAsync();
             return emp;
         }
     }
